@@ -9,7 +9,7 @@ export default async function ProjectPage({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const projectQuery = groq`
     *[_type == "project" && slug.current == $slug][0]{

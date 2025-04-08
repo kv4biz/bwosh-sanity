@@ -9,7 +9,8 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = params;
+  // Await params to ensure compliance with Next.js dynamic route handling.
+  const { slug } = await params;
 
   const blogQuery = groq`
     *[_type == "post" && slug.current == $slug][0]{

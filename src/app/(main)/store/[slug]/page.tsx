@@ -9,6 +9,8 @@ export default async function ProductPage({
 }: {
   params: { slug: string };
 }) {
+  const { slug } = await params;
+
   const query = `*[_type == "product" && slug.current == $slug][0]{
     _id,
     title,
@@ -31,7 +33,7 @@ export default async function ProductPage({
     tags
   }`;
 
-  const product = await client.fetch(query, { slug: params.slug });
+  const product = await client.fetch(query, { slug });
 
   if (!product) notFound();
 
