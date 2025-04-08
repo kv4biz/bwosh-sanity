@@ -1,26 +1,128 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+/* Global Variables */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Font variables from next/font */
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+  /* From shadcn UI */
+  --radius: 0.3rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.623 0.214 259.815);
+  --primary-foreground: oklch(0.97 0.014 254.604);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.623 0.214 259.815);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom Colors */
+@theme {
+  --color-aegean: #20446e;
+  --color-neatBlack: #121212;
+  --color-greenishBlue: #002e30;
+  --color-offWhite: #faf9f6;
+  --color-azure: #0097ff;
+  --color-purpleTaupe: #524243;
+  --color-policeBlue: #295e66;
+  --color-brownChocolate: #671033;
+  --color-arctic: #a7c9e3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base styles */
+@layer base {
+  /* Reset and border defaults */
+
+  body {
+    @apply bg-neutral-50  antialiased;
+  }
+  p {
+    @apply text-sm lg:text-[16px];
+    font-family: var(--font-open-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-montserrat);
+  }
+  /* Define distinct sizes for headings */
+  h1 {
+    @apply text-4xl lg:text-6xl tracking-wide uppercase font-bold;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-3xl capitalize font-semibold;
+  }
+
+  h3 {
+    @apply text-xl lg:text-2xl capitalize font-medium;
+  }
+  h4 {
+    @apply text-lg uppercase;
+  }
+  .txt-nav {
+    @apply text-sm lg:text-[16px] font-medium tracking-wide capitalize;
+    font-family: var(--font-montserrat);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  @keyframes l4 {
+    100% {
+      background-position:
+        top right,
+        bottom right;
+    }
+  }
+
+  .loader {
+    width: 250px;
+    height: 14px;
+    --c: #000 0 15px, #0000 0 20px;
+    background:
+      repeating-linear-gradient(135deg, var(--c)) left top,
+      repeating-linear-gradient(45deg, var(--c)) left bottom;
+    background-size: 200% 50%;
+    background-repeat: no-repeat;
+    animation: l4 7s infinite linear;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
 }
