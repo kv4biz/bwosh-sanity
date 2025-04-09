@@ -93,7 +93,7 @@ export default function ProductsStorePage() {
 
   if (products.length === 0) {
     return (
-      <section className="container mx-auto py-10 lg:py-16 px-4 text-center">
+      <section className="container px-2 lg:px-0 mx-auto py-10 lg:py-16 px-4 text-center">
         <p className="text-gray-500 text-lg">
           No products available at the moment.
         </p>
@@ -103,7 +103,7 @@ export default function ProductsStorePage() {
 
   return (
     <div className="w-full">
-      <div className="container mx-auto space-y-5 py-5">
+      <div className="container px-2 lg:px-0 mx-auto space-y-5 py-5">
         <div>
           <h2>Explore Our Exclusive Collection</h2>
           <h4>

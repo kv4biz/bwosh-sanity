@@ -125,7 +125,7 @@ export default function AllBlogsSection() {
 
   if (!posts.length) {
     return (
-      <section className="container mx-auto py-10 lg:py-16 px-4 text-center">
+      <section className="container px-2 lg:px-0 mx-auto py-10 lg:py-16 px-4 text-center">
         <p className="text-gray-500 text-lg">
           No blog posts available at the moment.
         </p>
@@ -135,7 +135,7 @@ export default function AllBlogsSection() {
 
   return (
     <div className="w-full">
-      <div className="container mx-auto border-t-4 border-gray-400 space-y-10 py-5">
+      <div className="container px-2 lg:px-0 px-2 lg:px-0 mx-auto border-t-4 border-gray-400 space-y-10 py-5">
         {/* Filter & Search Section */}
         <h2>All blogs</h2>
         <div className="flex flex-col gap-4 sm:flex-row justify-between items-center">

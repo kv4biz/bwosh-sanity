@@ -38,7 +38,7 @@ const EcoFooter = () => {
     <footer className="flex flex-col">
       {/* First Layer */}
       <div className="bg-black text-white py-10 lg:py-12">
-        <div className="container mx-auto flex flex-col lg:flex-row justify-center lg:justify-between gap-4 items-center px-4 lg:px-28">
+        <div className="container px-2 lg:px-0 mx-auto flex flex-col lg:flex-row justify-center lg:justify-between gap-4 items-center px-4 lg:px-28">
           {/* Logo */}
           <Logo height={80} />
           {/* Ecosystem Links */}

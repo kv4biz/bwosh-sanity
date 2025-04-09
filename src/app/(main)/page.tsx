@@ -25,7 +25,9 @@ export default function Home() {
       <IntroSection
         image="https://res.cloudinary.com/dikzx4eyh/image/upload/v1735982768/Bwosh/home/039_e25kia.jpg"
         imagePosition="left"
-        imageContainerClassName="lg:hex-img-container2"
+        imagecontainer
+        px-2
+        lg:px-0ClassName="lg:hex-img-container px-2 lg:px-02"
         tag="Your Trusted Partner"
         title="Why Choose Us"
         description1="At our core, we embody values that elevate every design project. Innovation drives our creativity, ensuring groundbreaking solutions. With a commitment to excellent service delivery, we craft seamless experiences. We foster collaboration and encourage work-life balance, making client and team synergy a priority."
@@ -33,7 +35,9 @@ export default function Home() {
         description3="Guided by our mission to deliver personalized designs that inspire and comfort, we strive to transform spaces into timeless reflections of style. Our vision is to be a globally recognized leader, shaping lives through impactful design."
       />
       <ProjectCategorySection
-        containerClassName="bg-aegean text-offWhite"
+        container
+        px-2
+        lg:px-0ClassName="bg-aegean text-offWhite"
         btnVariant="outline"
         title="Luxury Décor for Ultimate Comfort and Style"
         tag="Bwosh Residential"
@@ -42,7 +46,9 @@ export default function Home() {
       />
       <ProjectCategorySection
         swapTextAndCarousel
-        containerClassName="bg-offWhite text-aegean"
+        container
+        px-2
+        lg:px-0ClassName="bg-offWhite text-aegean"
         btnVariant="default"
         title="Empowering Productivity in Style"
         tag="Bwosh Offices"
@@ -50,7 +56,9 @@ export default function Home() {
         btnLink="/bwosh-offices"
       />
       <ProjectCategorySection
-        containerClassName="bg-aegean text-offWhite"
+        container
+        px-2
+        lg:px-0ClassName="bg-aegean text-offWhite"
         btnVariant="outline"
         title="Transforming Kitchens into Masterpieces"
         tag="Bwosh Kitchens"
@@ -59,7 +67,9 @@ export default function Home() {
       />
       <ProjectCategorySection
         swapTextAndCarousel
-        containerClassName="bg-offWhite text-aegean"
+        container
+        px-2
+        lg:px-0ClassName="bg-offWhite text-aegean"
         btnVariant="default"
         title="Designing Spaces That Welcome and Inspire"
         tag="Bwosh Hospitality"

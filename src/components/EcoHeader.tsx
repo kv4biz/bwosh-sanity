@@ -76,7 +76,7 @@ const EcoHeader = () => {
     <header
       className={`sticky top-0 z-30 py-4 ${headerColor} opacity-90 text-offWhite txt-nav`}
     >
-      <div className="container w-full mx-auto flex items-center justify-between px-4 md:px-20">
+      <div className="container px-2 lg:px-0 w-full mx-auto flex items-center justify-between px-4 md:px-20">
         {/* Logo */}
         <Image
           src={logoSrc}

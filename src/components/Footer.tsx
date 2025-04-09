@@ -46,7 +46,7 @@ const Footer = () => {
 
   return (
     <div className="w-full bg-neatBlack">
-      <div className="w-full container mx-auto px-4 lg:px-16">
+      <div className="w-full container px-2 lg:px-0 mx-auto px-4 lg:px-16">
         <div className="lg:grid lg:grid-cols-2 py-12 lg:py-20 gap-10 lg:items-start justify-between">
           {/* Company Section */}
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-20 pb-4 lg:items-start text-justify lg:text-left lg:pb-0 text-offWhite">
@@ -140,7 +140,7 @@ const Footer = () => {
       </div>
       {/* Footer Bottom */}
       <div className="py-4 bg-aegean text-offWhite">
-        <div className="container text-center">
+        <div className="container px-2 lg:px-0 text-center">
           <p className="text-xs font-light tracking-widest">
             &copy; 2025 Bwosh. All Rights Reserved.
           </p>

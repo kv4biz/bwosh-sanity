@@ -36,7 +36,7 @@ export default async function ProjectPage({
   }
 
   return (
-    <main className="container mx-auto py-10">
+    <main className="container px-2 lg:px-0 mx-auto py-10">
       <ProjectDetailView project={project} />
     </main>
   );

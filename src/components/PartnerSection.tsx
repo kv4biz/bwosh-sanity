@@ -10,7 +10,7 @@ const PartnerSection = () => {
 
   return (
     <div className="bg-neatBlack/30 mt-10 lg:mt-16 py-12 px-4 lg:px-8 lg:py-20">
-      <div className="flex flex-col items-center container mx-auto">
+      <div className="flex flex-col items-center container px-2 lg:px-0 mx-auto">
         <h2 className="text-center font-bold mb-2">Companies That Trust Us</h2>
         <p className="text-justify mb-4">
           Leading businesses rely on our expertise to transform their spaces
