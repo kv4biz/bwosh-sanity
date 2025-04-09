@@ -26,7 +26,7 @@ const BlogDetailView: React.FC<BlogDetailViewProps> = ({ post }) => {
     <article className="space-y-4 container mx-auto px-5 lg:px-20">
       {/* Header */}
       <header className="flex flex-col lg:flex-row lg:items-center justify-between">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <div className="flex flex-col lg:text-right">
           <p className="text-gray-600">By {author}</p>
           <p className="text-gray-400">

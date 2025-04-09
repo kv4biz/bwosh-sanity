@@ -10,6 +10,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { fetchAllProjects } from "@/sanity/lib/fetchers/projectFetchers";
+import { Loader } from "./ui/loader";
 
 interface ProjectType {
   _id: string;
@@ -67,7 +68,7 @@ const GallerySection = () => {
   };
 
   if (loading) {
-    return <div>Loading gallery...</div>;
+    return <Loader />;
   }
 
   return (
