@@ -135,7 +135,7 @@ export default function AllBlogsSection() {
 
   return (
     <div className="w-full">
-      <div className="container px-2 lg:px-0 mx-auto border-t-4 border-gray-400 space-y-10 py-5">
+      <div className="container px-4 lg:px-0 mx-auto border-t-2 border-gray-400 space-y-10 py-5">
         {/* Filter & Search Section */}
         <h2>All blogs</h2>
         <div className="flex flex-col gap-4 sm:flex-row justify-between items-center">

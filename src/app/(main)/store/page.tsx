@@ -103,7 +103,7 @@ export default function ProductsStorePage() {
 
   return (
     <div className="w-full">
-      <div className="container mx-auto space-y-5 py-5">
+      <div className="flex flex-col items-start container px-5 mx-auto space-y-5 py-5">
         <div>
           <h2>Explore Our Exclusive Collection</h2>
           <h4>
@@ -112,6 +112,7 @@ export default function ProductsStorePage() {
           </h4>
         </div>
         {/* Search Component */}
+
         <div className="relative w-full max-w-[350px]">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           <input
@@ -126,7 +127,7 @@ export default function ProductsStorePage() {
         </div>
 
         {/* Products Grid - responsive columns: 2 (sm), 3 (md), 5 (lg) */}
-        <div className="grid gap-2 px-5 md:px-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid gap-2 px-2 md:px-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {paginatedProducts.map((product) => (
             <Link href={`/store/${product.slug}`} key={product._id}>
               <div className="border border-slate-300 rounded-sm flex flex-col items-center cursor-pointer">

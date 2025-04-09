@@ -66,7 +66,7 @@ const MainBlogPostSection: React.FC<MainBlogPostSectionProps> = ({
 
   if (!posts.length) {
     return (
-      <section className="container mx-auto py-10 lg:py-16 px-4 text-center">
+      <section className="container mx-auto py-10 lg:py-16 px-5 text-center">
         <h2>{title}</h2>
         <h4>{tag}</h4>
         <p className="text-gray-500 text-lg">
