@@ -23,7 +23,7 @@ const BlogDetailView: React.FC<BlogDetailViewProps> = ({ post }) => {
   const { title, author, description, mainImage, publishedAt } = post;
 
   return (
-    <article className="space-y-4 container px-2 lg:px-0 mx-auto px-5 lg:px-20">
+    <article className="space-y-4 container  mx-auto px-5 lg:px-20">
       {/* Header */}
       <header className="flex flex-col lg:flex-row lg:items-center justify-between">
         <h2>{title}</h2>

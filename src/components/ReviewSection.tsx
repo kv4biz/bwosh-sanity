@@ -23,7 +23,7 @@ const ReviewCard: FC<Post> = ({ name, role, desc }) => {
 const ReviewSection: FC = () => {
   return (
     <div className="py-12 lg:py-24 bg-customColors-offWhite">
-      <div className="mx-auto container px-2 lg:px-0 px-2 lg:px-4">
+      <div className="mx-auto container px-2 lg:px-4">
         <h4 className="text-aegean">Customer Reviews</h4>
         <h2 className="text-aegean">What Our Clients Are Saying</h2>
         <p className="desc text-black">

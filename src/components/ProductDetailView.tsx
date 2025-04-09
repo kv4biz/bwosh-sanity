@@ -41,7 +41,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
 
   return (
     <div className="w-full">
-      <div className="container px-2 lg:px-0 mx-auto space-y-5">
+      <div className="container px-4 lg:px-8 mx-auto space-y-5">
         {/* Tags */}
         {product.tags?.length > 0 && (
           <div className="flex flex-wrap gap-2">

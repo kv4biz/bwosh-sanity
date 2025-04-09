@@ -62,7 +62,7 @@ const ProjectsViewSection: React.FC<ProjectsViewSectionProps> = ({
   }
 
   return (
-    <section className="py-10 lg:py-20 container px-2 lg:px-0 mx-auto">
+    <section className="py-10 lg:py-20 container mx-auto">
       {/* Section Header */}
       <div className="text-center gap-4 mb-6 lg:mb-10">
         <h2>{title}</h2>

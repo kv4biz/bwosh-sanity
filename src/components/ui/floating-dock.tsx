@@ -52,13 +52,13 @@ const FloatingDockDesktop = ({
       )}
     >
       {items.map((item) => (
-        <Iconcontainer px-2 lg:px-0 mouseX={mouseX} key={item.title} {...item} />
+        <Iconcontainer mouseX={mouseX} key={item.title} {...item} />
       ))}
     </motion.div>
   );
 };
 
-function Iconcontainer px-2 lg:px-0({
+function Iconcontainer({
   mouseX,
   title,
   icon,

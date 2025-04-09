@@ -8,7 +8,7 @@ interface MapSectionProps {
 const MapSection: FC<MapSectionProps> = ({ mapSrc }) => {
   return (
     <section className="py-10 lg:py-20">
-      <div className="container px-2 lg:px-0 mx-auto px-4">
+      <div className="container mx-auto px-4">
         {/* Map Embed */}
         <div className="aspect-w-16 h-64 lg:h-[400px]">
           <iframe

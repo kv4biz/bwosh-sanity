@@ -68,7 +68,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ contactInfo }) => {
   };
 
   return (
-    <section className="container px-2 lg:px-0 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 py-8 px-8 lg:py-12 lg:px-20 items-start">
+    <section className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 py-8 px-8 lg:py-12 lg:px-20 items-start">
       {/* Contact Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <h2 className="mb-4">We're Ready, Let's Talk.</h2>

@@ -6,7 +6,7 @@ import Image from "next/image";
 const AdminNavbar = () => {
   return (
     <div className="flex w-full overflow-hidden p-4 bg-neutral-800">
-      <div className="container px-2 lg:px-0 mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center">
         <div className="flex gap-2 items-center">
           <Image
             className="size-10"

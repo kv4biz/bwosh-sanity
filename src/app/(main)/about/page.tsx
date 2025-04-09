@@ -19,7 +19,7 @@ const Page: React.FC = () => {
         imagePosition="left"
         imagecontainer
         px-2
-        lg:px-0ClassName="lg:hex-img-container px-2 lg:px-03"
+        lg:px-0ClassName="lg:hex-img-container3"
         title="Your Vision, Our Craftsmanship"
         description1="We are an interior design company, that was established in response to demands for creative, sustainable, functional and captivating spaces."
         description2="Our skilled, well-experienced and equipped team is bent on providing exceptional designs and excellent execution process through the lens of our clients' needs and wants with the drive to deliver exquisite products and services."

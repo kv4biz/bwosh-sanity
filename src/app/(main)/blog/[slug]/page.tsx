@@ -37,7 +37,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <main className="container px-2 lg:px-0 mx-auto py-10">
+    <main className="container mx-auto py-10">
       <BlogDetailView post={post} />
     </main>
   );

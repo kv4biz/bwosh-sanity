@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const container px-2 lg:px-0Variants = (delay: number = 0): Variants => ({
+export const containerVariants = (delay: number = 0): Variants => ({
   offscreen: {
     opacity: 0,
     y: 30,

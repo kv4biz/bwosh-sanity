@@ -7,7 +7,7 @@ import { teamMembers } from "@/utils/mockData";
 const TeamSection = () => {
   return (
     <section className="py-5 lg:py-12 px-5 lg:px-16 bg-offWhite">
-      <div className="container px-2 lg:px-0 mx-auto">
+      <div className="container mx-auto">
         <div className="pt-4 lg:pt-0">
           <h2 className="text-center">Our Team</h2>
         </div>

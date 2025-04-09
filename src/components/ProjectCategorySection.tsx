@@ -19,7 +19,7 @@ import {
 import { Loader } from "./ui/loader";
 
 type ProjectCategorySectionProps = {
-  container px-2 lg:px-0ClassName?: string;
+  containerClassName?: string;
   title: string;
   tag: string;
   category: "residential" | "offices" | "kitchens" | "hospitality";
@@ -42,7 +42,7 @@ interface ProjectType {
 }
 
 const ProjectCategorySection: React.FC<ProjectCategorySectionProps> = ({
-  container px-2 lg:px-0ClassName,
+  containerClassName,
   title,
   tag,
   category,
@@ -87,7 +87,7 @@ const ProjectCategorySection: React.FC<ProjectCategorySectionProps> = ({
   );
 
   return (
-    <section className={`m-4 lg:mx-10 ${container px-2 lg:px-0ClassName}`}>
+    <section className={`m-4 lg:mx-10 ${containerClassName}`}>
       <div
         className={`flex flex-col items-center lg:items-start justify-between lg:flex-row ${
           swapTextAndCarousel ? "lg:flex-row-reverse" : ""

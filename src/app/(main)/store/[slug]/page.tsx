@@ -38,7 +38,7 @@ export default async function ProductPage({
   if (!product) notFound();
 
   return (
-    <main className="container px-2 lg:px-0 mx-auto px-5 py-10">
+    <main className="container mx-auto px-5 py-10">
       <ProductDetailView product={product} />
     </main>
   );

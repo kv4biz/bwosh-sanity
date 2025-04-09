@@ -7,7 +7,7 @@ import { useRef } from "react";
 interface IntroSectionProps {
   image: string;
   imagePosition: "left" | "right";
-  imagecontainer px-2 lg:px-0ClassName?: string;
+  imagecontainerClassName?: string;
   tag?: string;
   title?: string;
   description1: string;
@@ -23,7 +23,7 @@ interface IntroSectionProps {
 const IntroSection: React.FC<IntroSectionProps> = ({
   image,
   imagePosition,
-  imagecontainer px-2 lg:px-0ClassName,
+  imagecontainerClassName,
   tag,
   title,
   description1,
@@ -81,7 +81,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
         <div className="w-full">
           <div
             className={`h-[400px] lg:h-[450px] w-full lg:w-[540px] overflow-hidden ${
-              imagecontainer px-2 lg:px-0ClassName || ""
+              imagecontainerClassName || ""
             }`}
           >
             <Image

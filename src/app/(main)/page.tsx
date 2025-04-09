@@ -27,7 +27,7 @@ export default function Home() {
         imagePosition="left"
         imagecontainer
         px-2
-        lg:px-0ClassName="lg:hex-img-container px-2 lg:px-02"
+        lg:px-0ClassName="lg:hex-img-container2"
         tag="Your Trusted Partner"
         title="Why Choose Us"
         description1="At our core, we embody values that elevate every design project. Innovation drives our creativity, ensuring groundbreaking solutions. With a commitment to excellent service delivery, we craft seamless experiences. We foster collaboration and encourage work-life balance, making client and team synergy a priority."

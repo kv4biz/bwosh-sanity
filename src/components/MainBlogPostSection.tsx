@@ -66,7 +66,7 @@ const MainBlogPostSection: React.FC<MainBlogPostSectionProps> = ({
 
   if (!posts.length) {
     return (
-      <section className="container px-2 lg:px-0 mx-auto py-10 lg:py-16 px-4 text-center">
+      <section className="container mx-auto py-10 lg:py-16 px-4 text-center">
         <h2>{title}</h2>
         <h4>{tag}</h4>
         <p className="text-gray-500 text-lg">
@@ -77,7 +77,7 @@ const MainBlogPostSection: React.FC<MainBlogPostSectionProps> = ({
   }
 
   return (
-    <section className="container px-2 lg:px-0 mx-auto py-10 lg:py-16 px-4">
+    <section className="container mx-auto py-10 lg:py-16 px-4">
       {/* Section Header */}
       <div className="text-center lg:text-left mb-10">
         <h2>{title}</h2>
@@ -105,7 +105,7 @@ const MainBlogPostSection: React.FC<MainBlogPostSectionProps> = ({
                     backgroundImage: `url(${post.mainImage.asset.url})`,
                   }}
                 />
-                {/* Semi-transparent white container px-2 lg:px-0 at the bottom */}
+                {/* Semi-transparent white container at the bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4">
                   <h4 className="text-white mb-2">{post.title}</h4>
                   <Button variant="outline" size="sm" asChild>
