@@ -18,16 +18,13 @@ const Footer = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "https://bwosh-api.vercel.app/api/subscribe",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        }
-      );
+      const response = await fetch("https://bwosh-api.vercel.app/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -56,6 +53,9 @@ const Footer = () => {
                 <Link href="/about" className="py-1 hover:underline">
                   About
                 </Link>
+                <Link href="/consultation" className="py-1 hover:underline">
+                  Consultation
+                </Link>
                 <Link href="/blog" className="py-1 hover:underline">
                   Blog
                 </Link>
@@ -74,36 +74,16 @@ const Footer = () => {
             <div>
               <h3>Ecosystem</h3>
               <div className="flex flex-col txt-nav">
-                <Link
-                  href="/bwosh=-residential"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-1 hover:underline"
-                >
+                <Link href="/bwosh-residential" target="_blank" rel="noopener noreferrer" className="py-1 hover:underline">
                   Residential
                 </Link>
-                <Link
-                  href="/bwosh-offices"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-1 hover:underline"
-                >
+                <Link href="/bwosh-offices" target="_blank" rel="noopener noreferrer" className="py-1 hover:underline">
                   Offices
                 </Link>
-                <Link
-                  href="/bwosh-kitchens"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-1 hover:underline"
-                >
+                <Link href="/bwosh-kitchens" target="_blank" rel="noopener noreferrer" className="py-1 hover:underline">
                   Kitchens
                 </Link>
-                <Link
-                  href="/bwosh-hospitality"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-1 hover:underline"
-                >
+                <Link href="/bwosh-hospitality" target="_blank" rel="noopener noreferrer" className="py-1 hover:underline">
                   Hospitality
                 </Link>
               </div>
@@ -123,27 +103,18 @@ const Footer = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <Button
-                className="absolute top-2 right-2 rounded-full h-10 px-4"
-                onClick={handleSubscribe}
-                disabled={loading}
-              >
+              <Button className="absolute top-2 right-2 rounded-full h-10 px-4" onClick={handleSubscribe} disabled={loading}>
                 {loading ? "Subscribing..." : "Subscribe"}
               </Button>
             </div>
-            <p className="text-offWhite">
-              Get the latest news, updates, and interior design tips directly to
-              your inbox.
-            </p>
+            <p className="text-offWhite">Get the latest news, updates, and interior design tips directly to your inbox.</p>
           </div>
         </div>
       </div>
       {/* Footer Bottom */}
       <div className="py-4 bg-aegean text-offWhite">
         <div className="container text-center">
-          <p className="text-xs font-light tracking-widest">
-            &copy; 2025 Bwosh. All Rights Reserved.
-          </p>
+          <p className="text-xs font-light tracking-widest">&copy; 2025 Bwosh. All Rights Reserved.</p>
         </div>
       </div>
     </div>

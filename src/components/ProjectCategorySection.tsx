@@ -1,21 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import {
-  fetchResidentialProjects,
-  fetchOfficeProjects,
-  fetchKitchenProjects,
-  fetchHospitalityProjects,
-} from "@/sanity/lib/fetchers/projectFetchers";
+import { fetchResidentialProjects, fetchOfficeProjects, fetchKitchenProjects, fetchHospitalityProjects } from "@/sanity/lib/fetchers/projectFetchers";
 import { Loader } from "./ui/loader";
 
 type ProjectCategorySectionProps = {
@@ -76,29 +66,19 @@ const ProjectCategorySection: React.FC<ProjectCategorySectionProps> = ({
   }
 
   // Map projects to a simplified format
-  const filteredProjects = projects.map(
-    ({ images, slug, title, location }) => ({
-      image: images[0]?.asset?.url,
-      slug: slug,
-      title,
-      category,
-      location,
-    })
-  );
+  const filteredProjects = projects.map(({ images, slug, title, location }) => ({
+    image: images[0]?.asset?.url,
+    slug: slug,
+    title,
+    category,
+    location,
+  }));
 
   return (
     <section className={`m-4 lg:mx-10 ${containerClassName}`}>
-      <div
-        className={`flex flex-col items-center lg:items-start justify-between lg:flex-row ${
-          swapTextAndCarousel ? "lg:flex-row-reverse" : ""
-        }`}
-      >
+      <div className={`flex flex-col items-center lg:items-start justify-between lg:flex-row ${swapTextAndCarousel ? "lg:flex-row-reverse" : ""}`}>
         {/* Text Section */}
-        <div
-          className={`w-full lg:w-1/2 space-y-4 lg:space-y-6 p-10 text-center ${
-            swapTextAndCarousel ? "lg:text-right" : "lg:text-left"
-          }`}
-        >
+        <div className={`w-full lg:w-1/2 space-y-4 lg:space-y-6 p-10 text-center ${swapTextAndCarousel ? "lg:text-right" : "lg:text-left"}`}>
           <h4>{tag}</h4>
           <h2>{title}</h2>
 
@@ -112,30 +92,27 @@ const ProjectCategorySection: React.FC<ProjectCategorySectionProps> = ({
 
         {/* Carousel Section */}
         <div className="w-full lg:w-1/2">
-          <Carousel className="relative">
+          <Carousel
+            plugins={[
+              Autoplay({
+                delay: 25000,
+              }),
+            ]}
+            className="relative"
+          >
             <CarouselPrevious />
             <CarouselContent className="flex">
               {filteredProjects.map((project, index) => (
                 <CarouselItem key={index} className="relative">
                   <div className="block">
                     <div className="group relative">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover w-full h-96 lg:h-[400px]"
-                      />
+                      <img src={project.image} alt={project.title} className="object-cover w-full h-96 lg:h-[400px]" />
                       <div className="absolute w-full bottom-4 px-5 text-white">
                         <h4 className="font-semibold">{project.title}</h4>
                         <div className="flex justify-between items-center w-full">
-                          <p className="text-sm font-semibold flex-1">
-                            {project.location}
-                          </p>
+                          <p className="text-sm font-semibold flex-1">{project.location}</p>
                           <Button variant={"linkWhite"}>
-                            <a
-                              href={`/bwosh-${project.category}/${project.slug}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
+                            <a href={`/bwosh-${project.category}/${project.slug}`} target="_blank" rel="noopener noreferrer">
                               View Project
                             </a>
                           </Button>

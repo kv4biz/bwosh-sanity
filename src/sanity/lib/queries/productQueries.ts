@@ -6,6 +6,7 @@ const commonProductFields = `
   "slug": slug.current,
   productId,
   size,
+  price,
   availableColors[] {
     colorName,
     colorCode,

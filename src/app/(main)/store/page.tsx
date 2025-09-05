@@ -4,14 +4,7 @@ import * as React from "react";
 import { useEffect, useState, useMemo } from "react";
 import { SearchIcon } from "lucide-react";
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { Loader } from "@/components/ui/loader";
 import Image from "next/image";
 
@@ -26,6 +19,7 @@ interface Product {
   slug: string;
   productId: string;
   size: string;
+  price: number;
   availableColors: {
     colorName: string;
     colorCode: string;
@@ -70,12 +64,8 @@ export default function ProductsStorePage() {
     const searchTerm = search.toLowerCase();
     return products.filter((product) => {
       const matchTitle = product.title.toLowerCase().includes(searchTerm);
-      const matchColor = product.availableColors.some((color) =>
-        color.colorName.toLowerCase().includes(searchTerm)
-      );
-      const matchTag = product.tags.some((tag) =>
-        tag.toLowerCase().includes(searchTerm)
-      );
+      const matchColor = product.availableColors.some((color) => color.colorName.toLowerCase().includes(searchTerm));
+      const matchTag = product.tags.some((tag) => tag.toLowerCase().includes(searchTerm));
       return matchTitle || matchColor || matchTag;
     });
   }, [products, search]);
@@ -94,9 +84,7 @@ export default function ProductsStorePage() {
   if (products.length === 0) {
     return (
       <section className="container mx-auto py-10 lg:py-16 px-4 text-center">
-        <p className="text-gray-500 text-lg">
-          No products available at the moment.
-        </p>
+        <p className="text-gray-500 text-lg">No products available at the moment.</p>
       </section>
     );
   }
@@ -106,10 +94,7 @@ export default function ProductsStorePage() {
       <div className="flex flex-col items-start container px-5 mx-auto space-y-5 py-5">
         <div>
           <h2>Explore Our Exclusive Collection</h2>
-          <h4>
-            Find unique products in various sizes and colors to complement your
-            style.
-          </h4>
+          <h4>Find unique products in various sizes and colors to complement your style.</h4>
         </div>
         {/* Search Component */}
 
@@ -130,7 +115,7 @@ export default function ProductsStorePage() {
         <div className="grid gap-2 px-2 md:px-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {paginatedProducts.map((product) => (
             <Link href={`/store/${product.slug}`} key={product._id}>
-              <div className="border border-slate-300 rounded-sm flex flex-col items-center cursor-pointer">
+              <div className="border border-slate-300 rounded-sm flex flex-col items-start cursor-pointer">
                 {product.otherImages && product.otherImages.length > 0 ? (
                   <Image
                     src={product.otherImages[0].asset.url}
@@ -140,11 +125,18 @@ export default function ProductsStorePage() {
                     className="object-cover w-full h-48"
                   />
                 ) : (
-                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
-                    No Image
-                  </div>
+                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">No Image</div>
                 )}
                 <p className="p-2 text-sm">{product.title}</p>
+                <p className="p-2 text-sm">
+                  {" "}
+                  {product.price
+                    ? `₦${product.price.toLocaleString("en-NG", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}`
+                    : "Contact for Price"}
+                </p>
               </div>
             </Link>
           ))}
@@ -155,28 +147,17 @@ export default function ProductsStorePage() {
           <Pagination>
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.max(1, prev - 1))
-                  }
-                />
+                <PaginationPrevious onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))} />
               </PaginationItem>
               {Array.from({ length: totalPages }).map((_, i) => (
                 <PaginationItem key={i}>
-                  <PaginationLink
-                    isActive={i + 1 === currentPage}
-                    onClick={() => setCurrentPage(i + 1)}
-                  >
+                  <PaginationLink isActive={i + 1 === currentPage} onClick={() => setCurrentPage(i + 1)}>
                     {i + 1}
                   </PaginationLink>
                 </PaginationItem>
               ))}
               <PaginationItem>
-                <PaginationNext
-                  onClick={() =>
-                    setCurrentPage((prev) => Math.min(totalPages, prev + 1))
-                  }
-                />
+                <PaginationNext onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))} />
               </PaginationItem>
             </PaginationContent>
           </Pagination>

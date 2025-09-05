@@ -30,6 +30,11 @@ export const productType = defineType({
       type: "string",
     }),
     defineField({
+      name: "price",
+      title: "Price (₦)",
+      type: "number",
+    }),
+    defineField({
       name: "availableColors",
       title: "Available Colors",
       type: "array",

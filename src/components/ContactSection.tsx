@@ -24,9 +24,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ contactInfo }) => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -72,30 +70,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ contactInfo }) => {
       {/* Contact Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <h2 className="mb-4">We're Ready, Let's Talk.</h2>
-        <Input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full rounded-md"
-        />
-        <Input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full rounded-md"
-        />
-        <Textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full"
-          rows={6}
-        />
+        <Input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full rounded-md" />
+        <Input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} className="w-full rounded-md" />
+        <Textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} className="w-full" rows={6} />
         <Button type="submit" className="w-full">
           {loading ? "Sending..." : "Send"}
         </Button>

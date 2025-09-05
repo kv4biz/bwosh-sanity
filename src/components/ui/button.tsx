@@ -9,22 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-aegean text-offWhite hover:text-aegean border-aegean border hover:bg-offWhite",
-        outline:
-          "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-aegean",
-        outlineB:
-          "border border-neatBlack hover:border-transparent bg-transparent hover:bg-offWhite text-neatBlack hover:text-neatBlack",
-        outlineK:
-          "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-purpleTaupe",
-        outlineH:
-          "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-brownChocolate",
-        outlineO:
-          "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-azure",
-        outlineR:
-          "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-policeBlue",
-        outlineG:
-          "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-greenishBlue",
+        default: "bg-aegean text-offWhite hover:text-aegean border-aegean border hover:bg-offWhite",
+        normal: " border border-black bg-transparent",
+        ghost: "hover:bg-black hover:text-white",
+        subtle: "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        outline: "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-aegean",
+        outlineB: "border border-neatBlack hover:border-transparent bg-transparent hover:bg-offWhite text-neatBlack hover:text-neatBlack",
+        outlineK: "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-purpleTaupe",
+        outlineH: "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-brownChocolate",
+        outlineO: "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-azure",
+        outlineR: "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-policeBlue",
+        outlineG: "border border-offWhite bg-transparent hover:bg-offWhite text-offWhite hover:text-greenishBlue",
         linkWhite: "text-offWhite underline-offset-4 hover:underline",
         linkDark: "text-neatBlack underline-offset-4 hover:underline",
       },
@@ -54,13 +49,7 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
 
-  return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  );
+  return <Comp data-slot="button" className={cn(buttonVariants({ variant, size, className }))} {...props} />;
 }
 
 export { Button, buttonVariants };

@@ -3,14 +3,15 @@ import { Variants } from "framer-motion";
 export const containerVariants = (delay: number = 0): Variants => ({
   offscreen: {
     opacity: 0,
-    y: 30,
+    y: 20,
   },
   onscreen: {
     opacity: 1,
     y: 0,
     transition: {
       type: "spring",
-      duration: 2,
+      duration: 0.5,
+      bounce: 0.2,
       delay,
     },
   },
@@ -19,35 +20,20 @@ export const containerVariants = (delay: number = 0): Variants => ({
 export const tagVariants: Variants = {
   offscreen: {
     opacity: 0,
-    y: 10,
+    y: 8,
   },
   onscreen: {
     opacity: 1,
     y: 0,
     transition: {
       type: "spring",
-      duration: 2,
+      duration: 0.4,
+      bounce: 0.2,
     },
   },
 };
 
 export const titleVariants: Variants = {
-  offscreen: {
-    opacity: 0,
-    y: 30,
-  },
-  onscreen: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      duration: 2.2,
-      delay: 0.6,
-    },
-  },
-};
-
-export const desVariants: Variants = {
   offscreen: {
     opacity: 0,
     y: 20,
@@ -57,7 +43,25 @@ export const desVariants: Variants = {
     y: 0,
     transition: {
       type: "spring",
-      duration: 2.6,
+      duration: 0.6,
+      delay: 0.2,
+      bounce: 0.25,
+    },
+  },
+};
+
+export const desVariants: Variants = {
+  offscreen: {
+    opacity: 0,
+    y: 15,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+      bounce: 0.2,
     },
   },
 };

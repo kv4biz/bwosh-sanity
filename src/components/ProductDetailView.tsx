@@ -13,6 +13,7 @@ type Product = {
   slug: string;
   productId: string;
   size: string;
+  price: number;
   description: any;
   tags: string[];
   otherImages: {
@@ -35,9 +36,7 @@ type Product = {
 
 export default function ProductDetailView({ product }: { product: Product }) {
   // Set the default selected color image to the first available one if it exists.
-  const [selectedColorImage, setSelectedColorImage] = useState<string | null>(
-    product.availableColors?.[0]?.colorImage?.asset?.url || null
-  );
+  const [selectedColorImage, setSelectedColorImage] = useState<string | null>(product.availableColors?.[0]?.colorImage?.asset?.url || null);
 
   return (
     <div className="w-full">
@@ -46,10 +45,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
         {product.tags?.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {product.tags.map((tag, index) => (
-              <span
-                key={index}
-                className="text-sm px-3 py-1 rounded-full border"
-              >
+              <span key={index} className="text-sm px-3 py-1 rounded-full border">
                 #{tag}
               </span>
             ))}
@@ -74,47 +70,45 @@ export default function ProductDetailView({ product }: { product: Product }) {
                 <strong>Available Colors:</strong>
               </p>
               <div className="flex flex-wrap gap-4">
-                {product.availableColors.map((color) => (
-                  <button
-                    key={color.colorCode}
-                    className="flex flex-col items-center gap-1 p-2"
-                    onClick={() =>
-                      setSelectedColorImage(
-                        color.colorImage?.asset?.url || null
-                      )
-                    }
-                  >
-                    <div
-                      className="w-10 h-10 rounded-md"
-                      style={{ backgroundColor: color.colorCode }}
-                    />
-                    <span className="text-sm">{color.colorName}</span>
-                  </button>
-                ))}
+                {product.availableColors.map((color, index) => {
+                  const isSelected = selectedColorImage === color.colorImage?.asset?.url || (!selectedColorImage && index === 0);
+                  return (
+                    <button
+                      key={color.colorCode}
+                      className={`flex flex-col items-center p-1 ${isSelected ? "border border-aegean rounded-md" : ""}`}
+                      onClick={() => setSelectedColorImage(color.colorImage?.asset?.url || null)}
+                    >
+                      <div className="w-8 h-8 rounded-md" style={{ backgroundColor: color.colorCode }} />
+                    </button>
+                  );
+                })}
               </div>
+
               <p>(select the color)</p>
             </div>
-
+            <p>
+              <strong>Price:</strong>{" "}
+              {product.price
+                ? `₦${product.price.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}`
+                : "Contact for Price"}
+            </p>
             {/* WhatsApp Button */}
             <a
               href={`https://wa.me/+2347069114249?text=Hi, I'm interested in this product: ${product.title}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="mt-4">Ask on WhatsApp</Button>
+              <Button className="mt-4">Make Inquiries</Button>
             </a>
           </div>
 
           {/* Display Selected Available Color Image */}
           <div className="flex-1 max-h-[460px] rounded-sm shadow-sm overflow-hidden">
             {selectedColorImage && (
-              <Image
-                src={selectedColorImage}
-                alt={product.title}
-                width={800}
-                height={600}
-                className="w-full object-scale-down"
-              />
+              <Image src={selectedColorImage} alt={product.title} width={800} height={600} className="w-full object-scale-down" />
             )}
           </div>
         </section>
@@ -137,18 +131,9 @@ export default function ProductDetailView({ product }: { product: Product }) {
               const imageUrl = urlFor(img).width(800).height(600).url();
 
               return (
-                <div
-                  key={img.alt}
-                  className="w-full overflow-hidden rounded-sm"
-                >
+                <div key={img.alt} className="w-full overflow-hidden rounded-sm">
                   {imageUrl && (
-                    <Image
-                      src={imageUrl}
-                      alt={img.alt || product.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-full object-scale-down"
-                    />
+                    <Image src={imageUrl} alt={img.alt || product.title} width={800} height={600} className="w-full h-full object-scale-down" />
                   )}
                 </div>
               );

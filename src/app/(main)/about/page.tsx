@@ -23,13 +23,7 @@ const Page: React.FC = () => {
         description2="Our skilled, well-experienced and equipped team is bent on providing exceptional designs and excellent execution process through the lens of our clients' needs and wants with the drive to deliver exquisite products and services."
         list={{
           listTitle: "Our Sevices",
-          listItems: [
-            "Home and Office Interior design",
-            "Project Management",
-            "Renovation and revamp works",
-            "3D Visualisation",
-            "Furniture and decor sales",
-          ],
+          listItems: ["Interior design", "Project Management", "Renovation and revamp works", "3D Visualisation", "Furniture and decor sales"],
         }}
         description4="We offer FREE consultation to bring your ideas to life!"
       />

@@ -4,11 +4,7 @@ import ProductDetailView from "@/components/ProductDetailView";
 
 export const revalidate = 60;
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function ProductPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
   const query = `*[_type == "product" && slug.current == $slug][0]{
@@ -17,6 +13,7 @@ export default async function ProductPage({
     "slug": slug.current,
     productId,
     size,
+    price,
     availableColors[] {
       colorName,
       colorCode,
