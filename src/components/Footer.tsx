@@ -63,7 +63,7 @@ const Footer = () => {
                   Store
                 </Link>
                 <Link href="/project-reel" className="py-1 hover:underline">
-                  Project Reel
+                  Project Reels
                 </Link>
                 <Link href="/contact" className="py-1 hover:underline">
                   Contact

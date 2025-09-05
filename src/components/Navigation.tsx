@@ -59,7 +59,7 @@ const Navigation: React.FC = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/project-reel" className={getLinkClass("/project-reel")}>
-            Project Reel
+            Project Reels
           </Link>
         </NavigationMenuItem>
 

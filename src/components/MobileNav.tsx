@@ -34,7 +34,7 @@ const MobileNav: React.FC = () => {
             Consultation
           </Link>
           <Link href="/project-reel" className={getActiveLinkStyle(pathname, "/project-reel")} onClick={handleCloseWithDelay}>
-            Project Reel
+            Project Reels
           </Link>
           <Link href="/blog" className={getActiveLinkStyle(pathname, "/blog")} onClick={handleCloseWithDelay}>
             Blog
